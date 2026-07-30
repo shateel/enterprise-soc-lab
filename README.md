@@ -161,8 +161,8 @@ flowchart TB
 | Host | IP | Notes |
 |---|---|---|
 | **WEB01-WS2019** | `192.168.20.30` | Domain joined, Sysmon deployed, DNS to `192.168.5.10` |
-| **Juice Shop** | `192.168.20.35` | Dockerized vulnerable web app |
-| **DVWA** | `192.168.20.36` | Dockerized vulnerable web app |
+| **Juice Shop** | `192.168.20.35` | Dockerized vulnerable web app, DNS `8.8.8.8` |
+| **DVWA** | `192.168.20.36` | Dockerized vulnerable web app, DNS `8.8.8.8` |
 | **WAF01 (SafeLine)** | `192.168.20.70` / `192.168.20.71` | Reverse proxy and WAF for Juice Shop / DVWA |
 | Host PC | `192.168.20.254` | Physical host adapter |
 
