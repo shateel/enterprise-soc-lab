@@ -191,22 +191,23 @@ All Attack network hosts use: Subnet `255.255.255.0`, Gateway `192.168.30.1`, DN
 
 ```mermaid
 sequenceDiagram
-    participant A as Kali / Parrot (Attack Net)
-    participant PF as pfSense
-    participant SUR as Suricata IDS
-    participant ZK as Zeek (via SPAN)
+    participant A as Kali / Parrot (Attack Network)
+    participant PF as pfSense (routing + inline Suricata)
+    participant ZK as Zeek (SPAN, out of band)
     participant WAF as SafeLine WAF
     participant APP as Juice Shop / DVWA
 
-    A->>PF: Traffic to Servers network
-    PF->>SUR: Inspect (Users + Servers segments)
-    PF-->>ZK: Mirror packets (VMnet6, promiscuous)
-    PF->>WAF: Forward to reverse proxy
-    WAF->>APP: Proxied request (upstream)
-    WAF-->>PF: WAF logs
-    SUR-->>PF: IDS alerts
-    ZK-->>ZK: Passive NSM logging
+    A->>PF: 1. Request toward Servers network
+    Note over PF: Suricata inspects inline (Users + Servers segments)<br/>Firewall + IDS events logged locally
+    PF-->>ZK: 2. One way mirrored copy (VMnet6, promiscuous)
+    PF->>WAF: 3. Routed request (forwarded, not mirrored)
+    WAF->>APP: 4. Proxied request to upstream
+    APP-->>WAF: 5. Response
+    WAF-->>PF: 6. Response (WAF logs recorded locally)
+    PF-->>A: 7. Response routed back to attacker
 ```
+
+Steps 1, 3, 4 carry the live request forward; steps 5 to 7 carry the response back along the same path. The mirror to Zeek in step 2 is a one way copy that never rejoins the traffic flow, Zeek only observes, it never forwards or blocks anything.
 
 **Detection sources feeding the pipeline:**
 - 🔥 pfSense firewall logs
