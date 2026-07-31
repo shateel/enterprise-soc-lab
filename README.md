@@ -1,4 +1,4 @@
-# 🏠 Home SOC Lab: Small Enterprise Security Operations & Detection Engineering
+# Home SOC Lab: Small Enterprise Security Operations & Detection Engineering
 
 <div align="center">
 
