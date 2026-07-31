@@ -227,7 +227,7 @@ flowchart LR
     SYSMON[Sysmon / Windows Agents] --> WAZUH[🟡 Wazuh SIEM]
     WAZUH --> HIVE[🟠 TheHive Case Mgmt]
     HIVE --> SHUFFLE[🔵 Shuffle SOAR]
-    SHUFFLE --> CORTEX[🟣 Cortex Observable Analysis]
+    SHUFFLE --> CORTEX[🟣 Cortex]
 ```
 
 ---
