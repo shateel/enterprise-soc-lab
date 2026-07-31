@@ -53,7 +53,7 @@ This build is used to practice:
 
 ---
 
-## 🏗️ Architecture
+## 🏗 Architecture
 
 All virtual machines run on **VMware Workstation**, using host only networks for internal segments and NAT for internet egress. Every segment terminates on a **pfSense** virtual firewall, which routes and inspects traffic between zones.
 
@@ -134,9 +134,9 @@ flowchart TB
 
 ---
 
-## 🖥️ System Inventory
+## 🖥 System Inventory
 
-### 🗂️ Management Network (`192.168.5.0/24`)
+### 🗂 Management Network (`192.168.5.0/24`)
 
 | Host | IP | Role |
 |---|---|---|
@@ -156,7 +156,7 @@ flowchart TB
 
 **DNS for this segment:** `192.168.5.10` (DC01)
 
-### 🖥️ Servers Network (`192.168.20.0/24`)
+### 🖥 Servers Network (`192.168.20.0/24`)
 
 | Host | IP | Notes |
 |---|---|---|
