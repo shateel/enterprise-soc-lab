@@ -40,14 +40,14 @@ This lab simulates a small enterprise network with segmented zones for managemen
 
 This build is used to practice:
 
-- 🔍 Network security monitoring and log analysis
-- 🚨 SIEM alerting and correlation (Wazuh)
-- 🧑‍💻 Case management and incident response (TheHive)
-- 🤖 Security automation and orchestration (Shuffle / SOAR)
-- 🕸️ Web application attack and defense (DVWA, Juice Shop, WAF)
-- 🦠 Malware analysis (FLARE VM)
-- 🩹 Vulnerability scanning (Nessus)
-- 🖥️ Host level telemetry (Sysmon and Windows Event Logs)
+- Network security monitoring and log analysis
+- SIEM alerting and correlation (Wazuh)
+- Case management and incident response (TheHive)
+- Security automation and orchestration (Shuffle / SOAR)
+- Web application attack and defense (DVWA, Juice Shop, WAF)
+- Malware analysis (FLARE VM)
+- Vulnerability scanning (Nessus)
+- Host level telemetry (Sysmon and Windows Event Logs)
 
 > ⚠️ This lab is designed to run fully isolated from production networks. See the [Security Notice](#-security-notice) before deploying.
 
